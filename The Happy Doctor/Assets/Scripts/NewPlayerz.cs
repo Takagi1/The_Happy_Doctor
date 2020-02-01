@@ -58,7 +58,7 @@ public class NewPlayerz : MonoBehaviour
             }
             float vert = 0;
 
-            if (Input.GetButtonDown("Vertical") && Input.GetButtonDown("Vertical"))
+            if (Input.GetButtonDown("Vertical"))
             {
                 MoveMenu(1);
             }
