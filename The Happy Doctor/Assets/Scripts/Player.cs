@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
+
 public class Player : MonoBehaviour
 {
+    
+        
+
     public float speed;
 
     bool bagFull = false;
@@ -88,4 +92,6 @@ public class Player : MonoBehaviour
 
         victim.GiveLimb(content);
     }
+
+
 }

@@ -1,0 +1,880 @@
+fileFormatVersion: 2
+guid: 236c148be526af6438eef7926013f059
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6409854285902807994
+    second: Adjustedplague doctor_0
+  - first:
+      213: 7570701631019102252
+    second: Adjustedplague doctor_1
+  - first:
+      213: -1075597091443104422
+    second: Adjustedplague doctor_2
+  - first:
+      213: -914749740052135005
+    second: Adjustedplague doctor_3
+  - first:
+      213: -5388534398586941271
+    second: Adjustedplague doctor_4
+  - first:
+      213: 5194053138912258143
+    second: Adjustedplague doctor_5
+  - first:
+      213: -2727249567801873948
+    second: Adjustedplague doctor_6
+  - first:
+      213: 8745656861729142357
+    second: Adjustedplague doctor_7
+  - first:
+      213: -3092287122002662753
+    second: Adjustedplague doctor_8
+  - first:
+      213: 3806476771494025470
+    second: Adjustedplague doctor_9
+  - first:
+      213: -7718073451454413468
+    second: Adjustedplague doctor_10
+  - first:
+      213: 399144381389085017
+    second: Adjustedplague doctor_11
+  - first:
+      213: -7623137313936671014
+    second: Adjustedplague doctor_12
+  - first:
+      213: -7285572461399822924
+    second: Adjustedplague doctor_13
+  - first:
+      213: -8172574557756715084
+    second: Adjustedplague doctor_14
+  - first:
+      213: 4289899876094238330
+    second: Adjustedplague doctor_15
+  - first:
+      213: -5808995347300412268
+    second: Adjustedplague doctor_16
+  - first:
+      213: -2189500012577994719
+    second: Adjustedplague doctor_17
+  - first:
+      213: -7640655227829765833
+    second: Adjustedplague doctor_18
+  - first:
+      213: 675997404204958784
+    second: Adjustedplague doctor_19
+  - first:
+      213: 5043230690272786885
+    second: Adjustedplague doctor_20
+  - first:
+      213: 8562785617781203357
+    second: Adjustedplague doctor_21
+  - first:
+      213: 3273057287056051063
+    second: Adjustedplague doctor_22
+  - first:
+      213: 7110634009440608144
+    second: Adjustedplague doctor_23
+  - first:
+      213: -4380032737037136513
+    second: Adjustedplague doctor_24
+  - first:
+      213: 3126251462265110764
+    second: Adjustedplague doctor_25
+  - first:
+      213: 7118538523341287159
+    second: Adjustedplague doctor_26
+  - first:
+      213: 311268578804789574
+    second: Adjustedplague doctor_27
+  - first:
+      213: 146633263508413871
+    second: Adjustedplague doctor_28
+  - first:
+      213: -6525406496253967100
+    second: Adjustedplague doctor_29
+  - first:
+      213: 1845864266294063292
+    second: Adjustedplague doctor_30
+  - first:
+      213: -2597619366421075223
+    second: Adjustedplague doctor_31
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 124
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Adjustedplague doctor_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 838
+        width: 317
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3804d138064f850800000000000000
+      internalID: 6409854285902807994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_1
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 835
+        width: 199
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c203d59a509801960800000000000000
+      internalID: 7570701631019102252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_2
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 835
+        width: 199
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a552713e426b211f0800000000000000
+      internalID: -1075597091443104422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_3
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 832
+        width: 205
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3cfcd35f72e43f0800000000000000
+      internalID: -914749740052135005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 448
+        width: 196
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a09040a3841835b0800000000000000
+      internalID: -5388534398586941271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_5
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 437
+        width: 275
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f582e518fcbf41840800000000000000
+      internalID: 5194053138912258143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_6
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 451
+        width: 316
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e9e459b7fcd62ad0800000000000000
+      internalID: -2727249567801873948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_7
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 450
+        width: 214
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556b2da4490de5970800000000000000
+      internalID: 8745656861729142357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 86
+        width: 316
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a24850f3df515d0800000000000000
+      internalID: -3092287122002662753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_9
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 255
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef85da2c47253d430800000000000000
+      internalID: 3806476771494025470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_10
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 240
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465cfa78615e3e490800000000000000
+      internalID: -7718073451454413468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_11
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 66
+        width: 427
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9591aca33bb0a8500800000000000000
+      internalID: 399144381389085017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_12
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 54
+        width: 200
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade77c8800d253690800000000000000
+      internalID: -7623137313936671014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_13
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 237
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd25ec627274ea90800000000000000
+      internalID: -7285572461399822924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_14
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 239
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf04886dbe259e80800000000000000
+      internalID: -8172574557756715084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_15
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 218
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ed69c5539c88b30800000000000000
+      internalID: 4289899876094238330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_16
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 229
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494134e428d426fa0800000000000000
+      internalID: -5808995347300412268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_17
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 222
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128439ac6555d91e0800000000000000
+      internalID: -2189500012577994719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_18
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 214
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739b9fd5d80f6f590800000000000000
+      internalID: -7640655227829765833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_19
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 216
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04409babe00a16900800000000000000
+      internalID: 675997404204958784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_21
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 208
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d912cabd62025d670800000000000000
+      internalID: 8562785617781203357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_22
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bca7cd24c3c6d20800000000000000
+      internalID: 3273057287056051063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_23
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 209
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fd48435fb0ea260800000000000000
+      internalID: 7110634009440608144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_24
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 210
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7dc15c9e6ff633c0800000000000000
+      internalID: -4380032737037136513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_25
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 180
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce08bde242da26b20800000000000000
+      internalID: 3126251462265110764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_26
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 189
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fee0b342112ac260800000000000000
+      internalID: 7118538523341287159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_27
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 181
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641766d8f19d15400800000000000000
+      internalID: 311268578804789574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_30
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 131
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb07b0835c3dd9910800000000000000
+      internalID: 1845864266294063292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Adjustedplague doctor_31
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 118
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eaebc2f2f663fbd0800000000000000
+      internalID: -2597619366421075223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
