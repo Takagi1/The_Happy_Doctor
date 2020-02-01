@@ -18,23 +18,34 @@ public class Victim : MonoBehaviour
     [SerializeField]
     private float health;
 
+    public bool menuVisible;
+
+    public VicState state;
+
+    //Make const?
+    public int children;
+    public bool isMurderer;
+
+    public Image healthBar;
+
+    [Header("Limbs")]
     public Limb leftArm;
     public Limb leftLeg;
     public Limb rightArm;
     public Limb rightLeg;
 
-    public VicState state;
+    [Header("Images Settings")]
+    public Image leftArmBG;
+    public Image leftLegBG;
+    public Image rightArmBG;
+    public Image rightLegBG;
 
-    public int children;
-    public bool isMurderer;
 
-    public Image healthBar;
+    [Header("Text Settings")]
     public Text leftArmTxt;
     public Text leftLegTxt;
     public Text rightArmTxt;
     public Text rightLegTxt;
-
-    public bool menuVisible;
 
     private void Awake()
     {
@@ -49,6 +60,11 @@ public class Victim : MonoBehaviour
         leftLegTxt.text = "Left Leg " + leftLeg.GetClass();
         rightArmTxt.text = "Right Arm " + rightArm.GetClass();
         rightLegTxt.text = "Right Leg " + rightLeg.GetClass();
+
+        leftArmTxt.transform.parent.gameObject.SetActive(false);
+        leftLegTxt.transform.parent.gameObject.SetActive(false);
+        rightArmTxt.transform.parent.gameObject.SetActive(false);
+        rightLegTxt.transform.parent.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -181,18 +197,18 @@ public class Victim : MonoBehaviour
 
     public void TurnOnMenu()
     {
-        leftArmTxt.enabled = true;
-        leftLegTxt.enabled = true;
-        rightArmTxt.enabled = true;
-        rightLegTxt.enabled = true;
+        leftArmBG.gameObject.SetActive(true);
+        leftLegBG.gameObject.SetActive(true);
+        rightArmBG.gameObject.SetActive(true);
+        rightLegBG.gameObject.SetActive(true);
     }
 
     public void TurnOffMenu()
     {
-        leftArmTxt.enabled = false;
-        leftLegTxt.enabled = false;
-        rightArmTxt.enabled = false;
-        rightLegTxt.enabled = false;
+        leftArmBG.gameObject.SetActive(false);
+        leftLegBG.gameObject.SetActive(false);
+        rightArmBG.gameObject.SetActive(false);
+        rightLegBG.gameObject.SetActive(false); ;
     }
     
 }

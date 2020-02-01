@@ -13,34 +13,55 @@ public class Player : MonoBehaviour
     public bool facingRight = true;
     Limb.LimbType content;
     Rigidbody2D body;
-    Victim victim;
 
-    bool menuInteract = false;
+    int boxTime;
+    int resetBoxTime;
+
+    //MENU INTERACT
+    public bool menuInteract;
+    Victim victim;
+    private int menuLoc = 0;
+
+    Vector3 sizeSave;
 
     // Start is called before the first frame update
     void Start()
     {
+        menuInteract = false;
         victim = null;
         body = GetComponent<Rigidbody2D>();
+        resetBoxTime = 2;
+        boxTime = resetBoxTime;
 
+        sizeSave = this.transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<BoxCollider2D>().enabled)
-        {
-            GetComponent<BoxCollider2D>().enabled = false;
-        }
+
         if(menuInteract)
         {
+           
             if (Input.GetAxis("Horizontal") != 0) {
                 victim.TurnOffMenu();
                 menuInteract = false;
                 victim = null;
             }
+            float vert = 0;
+
+            if (Input.GetButtonDown("Vertical") && Input.GetButtonDown("Vertical"))
+            {
+                MoveMenu(1);
+            }
+            else if (Input.GetButtonDown("down"))
+            {
+                MoveMenu(-1);
+            }
+
+
             //Action exit
-            
+
         }
         else
         {
@@ -53,13 +74,13 @@ public class Player : MonoBehaviour
             //Flipping Sprite
             if (Input.GetAxis("Horizontal") > 0)
             {
-                transform.localScale = new Vector3(1f, 1f, 1f);
+                transform.localScale = sizeSave;
                 facingRight = true;
             }
 
             else if (Input.GetAxis("Horizontal") < 0)
             {
-                transform.localScale = new Vector3(-1f, 1f, 1f);
+                transform.localScale = new Vector3(-sizeSave.x, sizeSave.y, sizeSave.z);
                 facingRight = false;
             }
 
@@ -67,6 +88,15 @@ public class Player : MonoBehaviour
             {
                 GetComponent<BoxCollider2D>().enabled = true;
             }
+        }
+        if (GetComponent<BoxCollider2D>().enabled && boxTime == 0)
+        {
+            GetComponent<BoxCollider2D>().enabled = false;
+            boxTime = resetBoxTime;
+        }
+        else
+        {
+            boxTime -= 1;
         }
     }
 
@@ -79,6 +109,8 @@ public class Player : MonoBehaviour
         {
             print("Hit");
             victim = col.gameObject.GetComponent<Victim>();
+            victim.TurnOnMenu();
+            StartMenu();
             menuInteract = true;
         }
     }
@@ -98,15 +130,43 @@ public class Player : MonoBehaviour
     {
         if (victim.HasLimb(content))
         {
-            //Victim already has that limb
+            //TODO: Victim already has that limb
             return;
         }
 
         victim.GiveLimb(content);
     }
 
-    void PopMenu()
+
+    void StartMenu()
+    {
+        victim.leftArmBG.color = Color.blue;
+    }
+
+    void MoveMenu(int val)
+    {
+        if(menuLoc < 0) { return; }
+        if(menuLoc > 3) { return; }
+
+        if (menuLoc == 0) { victim.leftArmBG.color = Color.white; }
+        else if(menuLoc == 1){ victim.leftLegBG.color = Color.white; }
+        else if(menuLoc == 2){ victim.rightArmBG.color = Color.white; }
+        else if(menuLoc == 3){ victim.rightLegBG.color = Color.white; }
+
+        menuLoc += val;
+
+        if (menuLoc == 0){ victim.leftArmBG.color = Color.blue; }
+        else if (menuLoc == 1){ victim.leftLegBG.color = Color.blue; }
+        else if (menuLoc == 2){ victim.rightArmBG.color = Color.blue; }
+        else if (menuLoc == 3){ victim.rightLegBG.color = Color.blue; }
+    }
+
+    //TODO: Close Menu
+    void CloseMenu()
     {
 
+        //Remove colour here
+
+        menuLoc = 0;
     }
 }
