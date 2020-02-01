@@ -11,9 +11,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public List<GameObject> list;
 
+    int orphens;
+
     // Start is called before the first frame update
     void Start()
     {
+        orphens = 0;
         list = new List<GameObject>();
         list.AddRange(GameObject.FindGameObjectsWithTag("Victim"));
         living = list.Count;
@@ -27,6 +30,7 @@ public class GameManager : MonoBehaviour
             Victim vic = obj.GetComponent<Victim>();
             switch (vic.state) {
                 case VicState.DEAD:
+                    orphens += vic.children;
                     list.Remove(obj);
                     living -= 1;
                     dead += 1;

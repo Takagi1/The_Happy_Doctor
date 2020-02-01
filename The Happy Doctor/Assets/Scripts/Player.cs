@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     Rigidbody2D body;
     Victim victim;
 
+    bool sucssess = false;
+
+    public bool menuVisible = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +52,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Interact"))
         {
             GetComponent<BoxCollider2D>().enabled = true;
-            StartCoroutine(EnableBox(2));
+            StartCoroutine(EnableBox(1));
         }
     }
 
@@ -58,13 +62,23 @@ public class Player : MonoBehaviour
         if (col.gameObject)
         {
             victim = col.gameObject.GetComponent<Victim>();
+            sucssess = true;
         }
     }
     IEnumerator EnableBox(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        victim = null;
+        if (!sucssess)
+        {
+            victim = null;
+        }
+        else
+        {
+            menuVisible = true;
+            //TODO: put this information into the menu
+        }
         GetComponent<BoxCollider2D>().enabled = false;
+        sucssess = false;
     }
 
     void GrabLimb(Victim victim, Limb.LimbType type)
@@ -87,5 +101,10 @@ public class Player : MonoBehaviour
         }
 
         victim.GiveLimb(content);
+    }
+
+    void PopMenu()
+    {
+
     }
 }

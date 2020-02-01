@@ -20,10 +20,18 @@ public class Victim : MonoBehaviour
 
     public VicState state;
 
+    public int children;
+    public bool isMurderer;
+
     private void Awake()
     {
         //Set health to max
         health = 1000;
+        children = Random.Range(0, 3);
+        if(Random.Range(0,1) == 1) { isMurderer = true; }
+        else { isMurderer = false; }
+
+
     }
 
     // Start is called before the first frame update
@@ -32,28 +40,20 @@ public class Victim : MonoBehaviour
 
     }
 
-
     void Update()
     {
-        int check = 0;
-        if (leftArm.state == Limb.InjuryClass.FINE) { check += 1; }
-        else if (leftArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
+
+        if (leftArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (leftArm.state == Limb.InjuryClass.LOST) { health -= 3; }
 
-        if (leftLeg.state == Limb.InjuryClass.FINE) { check += 1; }
-        else if (leftLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
+        if (leftLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (leftLeg.state == Limb.InjuryClass.LOST) { health -= 3; }
 
-        if (rightArm.state == Limb.InjuryClass.FINE) { check += 1; }
-        else if (rightArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
+        if (rightArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (rightArm.state == Limb.InjuryClass.LOST) { health -= 3; }
 
-        if (rightLeg.state == Limb.InjuryClass.FINE) { check += 1; }
-        else if (rightLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
+        if (rightLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (rightLeg.state == Limb.InjuryClass.LOST) { health -= 3; }
-
-        //Check for save
-        if (check == 4) { state = VicState.SAVED; }
 
         //Check for death
         if (health <= 0) { state = VicState.DEAD; }
