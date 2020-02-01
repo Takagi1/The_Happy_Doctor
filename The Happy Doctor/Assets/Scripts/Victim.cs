@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum VicState {
     LIVING,
@@ -10,20 +11,57 @@ public enum VicState {
 
 public class Victim : MonoBehaviour
 {
+    private float healthMax;
+
     [SerializeField]
     private float health;
 
+    public bool menuVisible;
+
+    public VicState state;
+
+    //Make const?
+    public int children;
+    public bool isMurderer;
+
+    public Image healthBar;
+
+    [Header("Limbs")]
     public Limb leftArm;
     public Limb leftLeg;
     public Limb rightArm;
     public Limb rightLeg;
 
-    public VicState state;
+    [Header("Images Settings")]
+    public Image leftArmBG;
+    public Image leftLegBG;
+    public Image rightArmBG;
+    public Image rightLegBG;
+
+
+    [Header("Text Settings")]
+    public Text leftArmTxt;
+    public Text leftLegTxt;
+    public Text rightArmTxt;
+    public Text rightLegTxt;
 
     private void Awake()
     {
         //Set health to max
-        health = 1000;
+        healthMax = 1000;
+        health = healthMax;
+        children = Random.Range(0, 3);
+        if (Random.Range(0, 1) == 1) { isMurderer = true; }
+        else { isMurderer = false; }
+        leftArmTxt.text = "Left Arm " + leftArm.GetClass();
+        leftLegTxt.text = "Left Leg " + leftLeg.GetClass();
+        rightArmTxt.text = "Right Arm " + rightArm.GetClass();
+        rightLegTxt.text = "Right Leg " + rightLeg.GetClass();
+
+        leftArmTxt.transform.parent.gameObject.SetActive(false);
+        leftLegTxt.transform.parent.gameObject.SetActive(false);
+        rightArmTxt.transform.parent.gameObject.SetActive(false);
+        rightLegTxt.transform.parent.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -35,28 +73,30 @@ public class Victim : MonoBehaviour
 
     void Update()
     {
-        int check = 0;
-        if (leftArm.state == Limb.InjuryClass.FINE) { check += 1; }
-        else if (leftArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
+        //TEMP
+        leftArmTxt.text = "Left Arm " + leftArm.GetClass();
+        leftLegTxt.text = "Left Leg " + leftLeg.GetClass();
+        rightArmTxt.text = "Right Arm " + rightArm.GetClass();
+        rightLegTxt.text = "Right Leg " + rightLeg.GetClass();
+
+
+        if (leftArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (leftArm.state == Limb.InjuryClass.LOST) { health -= 3; }
 
-        if (leftLeg.state == Limb.InjuryClass.FINE) { check += 1; }
-        else if (leftLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
+        if (leftLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (leftLeg.state == Limb.InjuryClass.LOST) { health -= 3; }
 
-        if (rightArm.state == Limb.InjuryClass.FINE) { check += 1; }
-        else if (rightArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
+        if (rightArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (rightArm.state == Limb.InjuryClass.LOST) { health -= 3; }
 
-        if (rightLeg.state == Limb.InjuryClass.FINE) { check += 1; }
-        else if (rightLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
+        if (rightLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (rightLeg.state == Limb.InjuryClass.LOST) { health -= 3; }
 
-        //Check for save
-        if (check == 4) { state = VicState.SAVED; }
+        healthBar.fillAmount = health / healthMax;
 
         //Check for death
         if (health <= 0) { state = VicState.DEAD; }
+
     }
 
     public void RemoveLimb(Limb.LimbType type)
@@ -154,5 +194,21 @@ public class Victim : MonoBehaviour
         }
         return true;
     }
-    
+
+    public void TurnOnMenu()
+    {
+        leftArmBG.gameObject.SetActive(true);
+        leftLegBG.gameObject.SetActive(true);
+        rightArmBG.gameObject.SetActive(true);
+        rightLegBG.gameObject.SetActive(true);
+    }
+
+    public void TurnOffMenu()
+    {
+        leftArmBG.gameObject.SetActive(false);
+        leftLegBG.gameObject.SetActive(false);
+        rightArmBG.gameObject.SetActive(false);
+        rightLegBG.gameObject.SetActive(false); ;
+    }
+
 }
