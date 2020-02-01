@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
     IEnumerator EnableBox(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
+        victim = null;
         GetComponent<BoxCollider2D>().enabled = false;
     }
 
