@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
     int dead = 0;
 
     [SerializeField]
-    private List<Victim> list;
+    public List<Victim> list;
 
     // Start is called before the first frame update
     void Start()
     {
+        list = new List<Victim>();
+        list.AddRange(FindObjectsOfType<Victim>());
         living = list.Count;
     }
 

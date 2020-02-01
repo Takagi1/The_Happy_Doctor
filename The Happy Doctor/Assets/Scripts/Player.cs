@@ -6,11 +6,15 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
+    //Copy of the detection box
+    [SerializeField]
+    GameObject detection;
 
     public float speed;
 
     bool bagFull = false;
-    bool facingRight = true;
+
+    public bool facingRight = true;
     Limb.LimbType content;
     Rigidbody2D body;
 
@@ -18,6 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        detection = FindObjectOfType<GameObject>();
     }
 
     // Update is called once per frame
@@ -40,6 +45,10 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
             facingRight = false;
+        }
+
+        if (Input.GetButtonDown("Interact"))
+        {
         }
     }
 
