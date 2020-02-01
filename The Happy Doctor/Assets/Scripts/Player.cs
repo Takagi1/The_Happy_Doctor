@@ -15,9 +15,7 @@ public class Player : MonoBehaviour
     Rigidbody2D body;
     Victim victim;
 
-    bool sucssess = false;
-
-    public bool menuVisible = false;
+    bool menuInteract = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,55 +28,59 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float input = Input.GetAxis("Horizontal");
-        if (input != 0)
+        if (GetComponent<BoxCollider2D>().enabled)
         {
-            transform.position += new Vector3(input * speed, 0, 0);
+            GetComponent<BoxCollider2D>().enabled = false;
         }
-
-        //Flipping Sprite
-        if (Input.GetAxis("Horizontal") > 0)
+        if(menuInteract)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
-            facingRight = true;
+            if (Input.GetAxis("Horizontal") != 0) {
+                victim.TurnOffMenu();
+                menuInteract = false;
+                victim = null;
+            }
+            //Action exit
+            
         }
-
-        else if (Input.GetAxis("Horizontal") < 0)
+        else
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-            facingRight = false;
-        }
+            float input = Input.GetAxis("Horizontal");
+            if (input != 0)
+            {
+                transform.position += new Vector3(input * speed, 0, 0);
+            }
 
-        if (Input.GetButtonDown("Interact"))
-        {
-            GetComponent<BoxCollider2D>().enabled = true;
-            StartCoroutine(EnableBox(1));
+            //Flipping Sprite
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                facingRight = true;
+            }
+
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+                facingRight = false;
+            }
+
+            if (Input.GetButtonDown("Interact"))
+            {
+                GetComponent<BoxCollider2D>().enabled = true;
+            }
         }
     }
 
+
+    //System: when this triggers set menu to true and go until the player does exits or performs a action
     void OnTriggerEnter2D(Collider2D col)
     {
         print("Test");
         if (col.gameObject)
         {
+            print("Hit");
             victim = col.gameObject.GetComponent<Victim>();
-            sucssess = true;
+            menuInteract = true;
         }
-    }
-    IEnumerator EnableBox(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        if (!sucssess)
-        {
-            victim = null;
-        }
-        else
-        {
-            menuVisible = true;
-            //TODO: put this information into the menu
-        }
-        GetComponent<BoxCollider2D>().enabled = false;
-        sucssess = false;
     }
 
     void GrabLimb(Victim victim, Limb.LimbType type)

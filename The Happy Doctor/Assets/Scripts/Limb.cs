@@ -20,4 +20,12 @@ public class Limb : MonoBehaviour
 
     public InjuryClass state;
     public LimbType type;   
+
+    public string GetClass()
+    {
+        if(state == InjuryClass.FINE) { return "FINE"; }
+        else if (state == InjuryClass.INJURED) { return "INJURED"; }
+        else if (state == InjuryClass.LOST) { return "LOST"; }
+        else { return null; }
+    }
 }

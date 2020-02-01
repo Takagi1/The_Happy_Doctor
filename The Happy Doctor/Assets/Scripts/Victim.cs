@@ -18,8 +18,6 @@ public class Victim : MonoBehaviour
     [SerializeField]
     private float health;
 
-    
-
     public Limb leftArm;
     public Limb leftLeg;
     public Limb rightArm;
@@ -31,6 +29,12 @@ public class Victim : MonoBehaviour
     public bool isMurderer;
 
     public Image healthBar;
+    public Text leftArmTxt;
+    public Text leftLegTxt;
+    public Text rightArmTxt;
+    public Text rightLegTxt;
+
+    public bool menuVisible;
 
     private void Awake()
     {
@@ -41,8 +45,10 @@ public class Victim : MonoBehaviour
         children = Random.Range(0, 3);
         if(Random.Range(0,1) == 1) { isMurderer = true; }
         else { isMurderer = false; }
-
-
+        leftArmTxt.text = "Left Arm " + leftArm.GetClass();
+        leftLegTxt.text = "Left Leg " + leftLeg.GetClass();
+        rightArmTxt.text = "Right Arm " + rightArm.GetClass();
+        rightLegTxt.text = "Right Leg " + rightLeg.GetClass();
     }
 
     // Start is called before the first frame update
@@ -53,7 +59,11 @@ public class Victim : MonoBehaviour
 
     void Update()
     {
-        
+        //TEMP
+        leftArmTxt.text = "Left Arm " + leftArm.GetClass();
+        leftLegTxt.text = "Left Leg " + leftLeg.GetClass();
+        rightArmTxt.text = "Right Arm " + rightArm.GetClass();
+        rightLegTxt.text = "Right Leg " + rightLeg.GetClass();
 
         if (leftArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (leftArm.state == Limb.InjuryClass.LOST) { health -= 3; }
@@ -167,6 +177,22 @@ public class Victim : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public void TurnOnMenu()
+    {
+        leftArmTxt.enabled = true;
+        leftLegTxt.enabled = true;
+        rightArmTxt.enabled = true;
+        rightLegTxt.enabled = true;
+    }
+
+    public void TurnOffMenu()
+    {
+        leftArmTxt.enabled = false;
+        leftLegTxt.enabled = false;
+        rightArmTxt.enabled = false;
+        rightLegTxt.enabled = false;
     }
     
 }
