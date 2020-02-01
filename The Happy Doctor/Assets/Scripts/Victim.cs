@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public enum VicState {
     LIVING,
@@ -10,8 +12,13 @@ public enum VicState {
 
 public class Victim : MonoBehaviour
 {
+
+    private float healthMax;
+
     [SerializeField]
     private float health;
+
+    
 
     public Limb leftArm;
     public Limb leftLeg;
@@ -23,10 +30,14 @@ public class Victim : MonoBehaviour
     public int children;
     public bool isMurderer;
 
+    public Image healthBar;
+
     private void Awake()
     {
+
+        healthMax = 1000;
         //Set health to max
-        health = 1000;
+        health = healthMax;
         children = Random.Range(0, 3);
         if(Random.Range(0,1) == 1) { isMurderer = true; }
         else { isMurderer = false; }
@@ -42,6 +53,7 @@ public class Victim : MonoBehaviour
 
     void Update()
     {
+        
 
         if (leftArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (leftArm.state == Limb.InjuryClass.LOST) { health -= 3; }
@@ -54,6 +66,8 @@ public class Victim : MonoBehaviour
 
         if (rightLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
         else if (rightLeg.state == Limb.InjuryClass.LOST) { health -= 3; }
+
+        healthBar.fillAmount = health / healthMax;
 
         //Check for death
         if (health <= 0) { state = VicState.DEAD; }
