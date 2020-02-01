@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -213,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 5552573449038226257, guid: 7f4d8cbe174111d4ba0b55525b09f23b,
         type: 3}
       propertyPath: m_Name
-      value: Victum
+      value: Victim
       objectReference: {fileID: 0}
     - target: {fileID: 5552573449038226263, guid: 7f4d8cbe174111d4ba0b55525b09f23b,
         type: 3}

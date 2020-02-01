@@ -65,7 +65,7 @@
     <Compile Include="Assets\Scripts\Limb.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
-    <Compile Include="Assets\Scripts\Victum.cs" />
+    <Compile Include="Assets\Scripts\Victim.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Github/The_Happy_Doctor/The Happy Doctor/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
