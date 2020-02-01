@@ -6,10 +6,6 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
-    //Copy of the detection box
-    [SerializeField]
-    GameObject detection;
-
     public float speed;
 
     bool bagFull = false;
@@ -17,12 +13,14 @@ public class Player : MonoBehaviour
     public bool facingRight = true;
     Limb.LimbType content;
     Rigidbody2D body;
+    Victim victim;
 
     // Start is called before the first frame update
     void Start()
     {
+        victim = null;
         body = GetComponent<Rigidbody2D>();
-        detection = FindObjectOfType<GameObject>();
+
     }
 
     // Update is called once per frame
@@ -49,7 +47,23 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Interact"))
         {
+            GetComponent<BoxCollider2D>().enabled = true;
+            StartCoroutine(EnableBox(2));
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        print("Test");
+        if (col.gameObject)
+        {
+            victim = col.gameObject.GetComponent<Victim>();
+        }
+    }
+    IEnumerator EnableBox(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 
     void GrabLimb(Victim victim, Limb.LimbType type)

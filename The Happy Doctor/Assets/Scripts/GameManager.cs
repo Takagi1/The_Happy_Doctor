@@ -9,30 +9,31 @@ public class GameManager : MonoBehaviour
     int dead = 0;
 
     [SerializeField]
-    public List<Victim> list;
+    public List<GameObject> list;
 
     // Start is called before the first frame update
     void Start()
     {
-        list = new List<Victim>();
-        list.AddRange(FindObjectsOfType<Victim>());
+        list = new List<GameObject>();
+        list.AddRange(GameObject.FindGameObjectsWithTag("Victim"));
         living = list.Count;
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach(Victim vic in list)
+        foreach(GameObject obj in list)
         {
+            Victim vic = obj.GetComponent<Victim>();
             switch (vic.state) {
                 case VicState.DEAD:
-                    list.Remove(vic);
+                    list.Remove(obj);
                     living -= 1;
                     dead += 1;
                     break;
 
                 case VicState.SAVED:
-                    list.Remove(vic);
+                    list.Remove(obj);
                     living -= 1;
                     saved += 1;
                     break;
