@@ -18,7 +18,7 @@ TagManager:
   - Climbing
   - Player
   - Background
-  - 
+  - Victim
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
     locked: 0
   - name: BackGround
     uniqueID: 436492271
+    locked: 0
+  - name: Victim
+    uniqueID: 721804777
     locked: 0
   - name: Player
     uniqueID: 121351439

@@ -64,8 +64,67 @@ public class NewPlayerz : MonoBehaviour
                 MoveMenu(1);
             }
             if (Input.GetButtonDown("Interact"))
-            {
-                
+            {     
+                if (menuLoc == 0)
+                {
+                    if(victim.leftArm.state == Limb.InjuryClass.FINE)
+                    {
+                        GrabLimb();
+                    }
+                    else if(victim.leftArm.state == Limb.InjuryClass.INJURED)
+                    {
+                        victim.leftArm.state = Limb.InjuryClass.FINE;
+                    }
+                    else if(victim.leftArm.state == Limb.InjuryClass.LOST)
+                    {
+                        GiveLimb();
+                    }
+                }
+                else if (menuLoc == 1)
+                {
+                    if (victim.leftLeg.state == Limb.InjuryClass.FINE)
+                    {
+                        GrabLimb();
+                    }
+                    else if (victim.leftLeg.state == Limb.InjuryClass.INJURED)
+                    {
+                        victim.leftLeg.state = Limb.InjuryClass.FINE;
+                    }
+                    else if (victim.leftLeg.state == Limb.InjuryClass.LOST)
+                    {
+                        GiveLimb();
+                    }
+                }
+                else if (menuLoc == 2)
+                {
+                    if (victim.rightArm.state == Limb.InjuryClass.FINE)
+                    {
+                        GrabLimb();
+                    }
+                    else if (victim.rightArm.state == Limb.InjuryClass.INJURED)
+                    {
+                        victim.rightArm.state = Limb.InjuryClass.FINE;
+                    }
+                    else if (victim.rightArm.state == Limb.InjuryClass.LOST)
+                    {
+                        GiveLimb();
+                    }
+                }
+                else if (menuLoc == 3)
+                {
+                    if (victim.rightLeg.state == Limb.InjuryClass.FINE)
+                    {
+                        GrabLimb();
+                    }
+                    else if (victim.rightLeg.state == Limb.InjuryClass.INJURED)
+                    {
+                        victim.rightLeg.state = Limb.InjuryClass.FINE;
+                    }
+                    else if (victim.rightLeg.state == Limb.InjuryClass.LOST)
+                    {
+                        GiveLimb();
+                    }
+                }
             }
 
             //Action exit
@@ -125,25 +184,53 @@ public class NewPlayerz : MonoBehaviour
             menuInteract = true;
         }
     }
-    void GrabLimb(Victim victim, Limb.LimbType type)
+    void GrabLimb()
     {
+        Limb.LimbType type = Limb.LimbType.LEFTARM;
+        if (menuLoc == 1) { type = Limb.LimbType.LEFTLEG; }
+        else if (menuLoc == 2) { type = Limb.LimbType.RIGHTARM; }
+        else if (menuLoc == 3) { type = Limb.LimbType.RIGHTLEG; }
         if (bagFull)
         {
             //TODO: Player already has a limb in the bag
             return;
         }
+        else if (menuLoc == 0 && victim.leftArm.state == Limb.InjuryClass.LOST)
+        {
+            //No Limb
+        }
+        else if (menuLoc == 1 && victim.leftLeg.state == Limb.InjuryClass.LOST)
+        {
+            //No Limb
+        }
+        else if (menuLoc == 2 && victim.rightArm.state == Limb.InjuryClass.LOST)
+        {
+            //No Limb
+        }
+        else if (menuLoc == 3 && victim.rightLeg.state == Limb.InjuryClass.LOST)
+        {
+            //No Limb
+        }
+
+        //TODO: Perfrom grab limb animation
         victim.RemoveLimb(type);
         content = type;
     }
 
-    void GiveLimb(Victim victim)
+    void GiveLimb()
     {
-        if (victim.HasLimb(content))
+        if(!bagFull)
+        {
+            //NO Limb
+            return;
+        }
+        else if (victim.HasLimb(content))
         {
             //TODO: Victim already has that limb
             return;
         }
 
+        //TODO: Perfrom give limb animation
         victim.GiveLimb(content);
     }
 

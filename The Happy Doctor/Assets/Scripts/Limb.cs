@@ -18,7 +18,7 @@ public class Limb : MonoBehaviour
         LOST
     }
 
-    SpriteRenderer renderer;
+    private SpriteRenderer renderer;
 
     [Header("Sprites")]
     public Sprite fine;
@@ -41,6 +41,19 @@ public class Limb : MonoBehaviour
         {
             renderer.sprite = fine;
         }
+        else if(state == InjuryClass.INJURED)
+        {
+            renderer.sprite = hurt;
+        }
+        else if (state == InjuryClass.LOST)
+        {
+            renderer.sprite = lost;
+        }
+        else if (state == InjuryClass.FINE && hasChanged)
+        {
+            renderer.sprite = fix;
+        }
+
     }
 
     public string GetClass()
