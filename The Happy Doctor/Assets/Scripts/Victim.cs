@@ -117,6 +117,15 @@ public class Victim : MonoBehaviour
         //Check for death
         if (health <= 0) { state = VicState.DEAD; }
 
+        //Fix for heal issue
+        if (leftArm.state == Limb.InjuryClass.FINE &&
+            leftLeg.state == Limb.InjuryClass.FINE&&
+            rightArm.state == Limb.InjuryClass.FINE &&
+            rightLeg.state == Limb.InjuryClass.FINE)
+        {
+            state = VicState.SAVED;// redundancy issue between saved and living was stopping people from being saved.
+        }
+
     }
 
     public void RemoveLimb(Limb.LimbType type)

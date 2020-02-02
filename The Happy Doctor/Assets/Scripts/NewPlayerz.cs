@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.Animations;
 
 public class NewPlayerz : MonoBehaviour
 {
@@ -14,9 +15,8 @@ public class NewPlayerz : MonoBehaviour
 
     int boxTime;
     int resetBoxTime;
-    //state
-    bool isAlive = true;
 
+    public bool needMeds = false;
 
     //cached component references
     Rigidbody2D myRigidBody;
@@ -28,6 +28,8 @@ public class NewPlayerz : MonoBehaviour
     private int menuLoc = 0;
 
     Vector3 sizeSave;
+
+    public bool bagGrab = false;
 
     //messege then methods
     void Start()
@@ -46,7 +48,7 @@ public class NewPlayerz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         if (menuInteract)
         {
 
@@ -151,6 +153,18 @@ public class NewPlayerz : MonoBehaviour
             boxTime -= 1;
         }
 
+        if (bagGrab)
+        {
+            myAnimator.SetBool("Grabbing stuff", false);
+            print("Test");
+
+            bagGrab = false;
+        }
+        if (needMeds)
+        {
+            myAnimator.SetBool("NeedsMeds", false);
+            needMeds = false;
+        }
     }
     private void Run()
     {
@@ -170,16 +184,21 @@ public class NewPlayerz : MonoBehaviour
         }
 
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
-        myAnimator.SetBool("idle", playerHasHorizontalSpeed);//we will change this to running if we have time or want to expand on the speed (like leveling or something)
+    }
+
+    private void PillPopping() 
+    {
+            if(bagFull == true) 
+        {
+            myAnimator.SetBool("NeedsMeds", bagFull);
+        }
     }
 
     //System: when this triggers set menu to true and go until the player does exits or performs a action
     void OnTriggerEnter2D(Collider2D col)
     {
-        print("Test");
         if (col.gameObject)
         {
-            print("Hit");
             victim = col.gameObject.GetComponent<Victim>();
             victim.TurnOnMenu();
             StartMenu();
@@ -194,7 +213,7 @@ public class NewPlayerz : MonoBehaviour
         else if (menuLoc == 3) { type = Limb.LimbType.RIGHTLEG; }
         if (bagFull)
         {
-            //TODO: Player already has a limb in the bag
+            //TODO Peter: Player already has a limb in the bag
             return;
         }
         else if (menuLoc == 0 && victim.leftArm.state == Limb.InjuryClass.LOST)
@@ -216,6 +235,8 @@ public class NewPlayerz : MonoBehaviour
 
         //TODO: Perfrom grab limb animation
 
+
+
         menuInteract = false;
         CloseMenu();
         
@@ -234,11 +255,16 @@ public class NewPlayerz : MonoBehaviour
         }
         else if (victim.HasLimb(content) == true)
         {
-            //TODO: Victim already has that limb
+            //TODO Peter: Victim already has that limb
             return;
         }
 
         //TODO: Perfrom give limb animation
+        bool playerIsInMenu = menuInteract;//activates limb grabber
+        myAnimator.SetBool("Grabbing stuff", playerIsInMenu);
+        bool playerIsNotInMenu = !menuInteract;//reactivate animations
+        myAnimator.SetBool("idle", playerIsNotInMenu);
+        
         bagFull = false;
         menuInteract = false;
         CloseMenu();
@@ -270,10 +296,12 @@ public class NewPlayerz : MonoBehaviour
         else if (menuLoc == 3) { victim.rightLegBG.color = Color.blue; }
     }
 
-    //TODO: Close Menu
     void CloseMenu()
     {
-        //Remove colour here
+        if (menuLoc == 0) { victim.leftArmBG.color = Color.white; }
+        else if (menuLoc == 1) { victim.leftLegBG.color = Color.white; }
+        else if (menuLoc == 2) { victim.rightArmBG.color = Color.white; }
+        else if (menuLoc == 3) { victim.rightLegBG.color = Color.white; }
         victim.TurnOffMenu();
         menuLoc = 0;
     }
