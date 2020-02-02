@@ -52,21 +52,21 @@ public class NewPlayerz : MonoBehaviour
 
             if (Input.GetAxis("Horizontal") != 0)
             {
-                victim.TurnOffMenu();
-                menuInteract = false;
+                CloseMenu();
                 victim = null;
             }
-            float vert = 0;
-
-            if (Input.GetButtonDown("Vertical"))
-            {
-                MoveMenu(1);
-            }
-            else if (Input.GetButtonDown("down"))
+            if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") > 0)
             {
                 MoveMenu(-1);
             }
-
+            else if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") < 0)
+            {
+                MoveMenu(1);
+            }
+            if (Input.GetButtonDown("Interact"))
+            {
+                
+            }
 
             //Action exit
 
@@ -80,7 +80,7 @@ public class NewPlayerz : MonoBehaviour
             }
         }
 
-        if (GetComponent<BoxCollider2D>().enabled && boxTime == 0)
+        if (GetComponent<BoxCollider2D>().isActiveAndEnabled && boxTime == 0)
         {
             GetComponent<BoxCollider2D>().enabled = false;
             boxTime = resetBoxTime;
@@ -155,8 +155,6 @@ public class NewPlayerz : MonoBehaviour
 
     void MoveMenu(int val)
     {
-        if (menuLoc < 0) { return; }
-        if (menuLoc > 3) { return; }
 
         if (menuLoc == 0) { victim.leftArmBG.color = Color.white; }
         else if (menuLoc == 1) { victim.leftLegBG.color = Color.white; }
@@ -164,6 +162,8 @@ public class NewPlayerz : MonoBehaviour
         else if (menuLoc == 3) { victim.rightLegBG.color = Color.white; }
 
         menuLoc += val;
+        if (menuLoc < 0) { menuLoc = 0; }
+        if (menuLoc > 3) { menuLoc = 3; }
 
         if (menuLoc == 0) { victim.leftArmBG.color = Color.blue; }
         else if (menuLoc == 1) { victim.leftLegBG.color = Color.blue; }
@@ -174,9 +174,8 @@ public class NewPlayerz : MonoBehaviour
     //TODO: Close Menu
     void CloseMenu()
     {
-
         //Remove colour here
-
+        victim.TurnOffMenu();
         menuLoc = 0;
     }
 }

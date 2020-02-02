@@ -75,9 +75,24 @@ public class Victim : MonoBehaviour
     {
         //TEMP
         leftArmTxt.text = "Left Arm " + leftArm.GetClass();
+        if(leftArm.state == Limb.InjuryClass.FINE) { leftArmTxt.color = Color.green; }
+        else if (leftArm.state == Limb.InjuryClass.INJURED) { leftArmTxt.color = Color.yellow; }
+        else if (leftArm.state == Limb.InjuryClass.LOST) { leftArmTxt.color = Color.red; }
+
         leftLegTxt.text = "Left Leg " + leftLeg.GetClass();
+        if (leftLeg.state == Limb.InjuryClass.FINE) { leftLegTxt.color = Color.green; }
+        else if (leftLeg.state == Limb.InjuryClass.INJURED) { leftLegTxt.color = Color.yellow; }
+        else if (leftLeg.state == Limb.InjuryClass.LOST) { leftLegTxt.color = Color.red; }
+
         rightArmTxt.text = "Right Arm " + rightArm.GetClass();
+        if (rightArm.state == Limb.InjuryClass.FINE) { rightArmTxt.color = Color.green; }
+        else if (rightArm.state == Limb.InjuryClass.INJURED) { rightArmTxt.color = Color.yellow; }
+        else if (rightArm.state == Limb.InjuryClass.LOST) { rightArmTxt.color = Color.red; }
+
         rightLegTxt.text = "Right Leg " + rightLeg.GetClass();
+        if (rightLeg.state == Limb.InjuryClass.FINE) { rightLegTxt.color = Color.green; }
+        else if (rightLeg.state == Limb.InjuryClass.INJURED) { rightLegTxt.color = Color.yellow; }
+        else if (rightLeg.state == Limb.InjuryClass.LOST) { rightLegTxt.color = Color.red; }
 
 
         if (leftArm.state == Limb.InjuryClass.INJURED) { health -= 1; }

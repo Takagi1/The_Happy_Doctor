@@ -18,8 +18,30 @@ public class Limb : MonoBehaviour
         LOST
     }
 
+    SpriteRenderer renderer;
+
+    [Header("Sprites")]
+    public Sprite fine;
+    public Sprite hurt;
+    public Sprite lost;
+    public Sprite fix;
+
+    bool hasChanged = false;
+
     public InjuryClass state;
     public LimbType type;
+    private void Start()
+    {
+        renderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if(state == InjuryClass.FINE)
+        {
+            renderer.sprite = fine;
+        }
+    }
 
     public string GetClass()
     {
