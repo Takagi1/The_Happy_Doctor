@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager gameManager;
+
     int saved = 0;
     int living = 0;
     int dead = 0;
@@ -17,6 +19,16 @@ public class GameManager : MonoBehaviour
     public List<GameObject> list;
 
     int orphens;
+
+    void Awake()
+    {
+        if (gameManager != null)
+            GameObject.Destroy(gameManager);
+        else
+            gameManager = this;
+
+        DontDestroyOnLoad(this);
+    }
 
     // Start is called before the first frame update
     void Start()
