@@ -17,4 +17,4 @@ MonoBehaviour:
   - __PanelContainer__rootVisualContainer__package-list-scrollview-key__VerticalScroller__Slider__UnityEngine.UIElements.Slider
   m_Values:
   - '{"m_Value":0.0,"m_LowValue":0.0,"m_HighValue":100.0}'
-  - '{"m_Value":384.1957092285156,"m_LowValue":0.0,"m_HighValue":1208.0}'
+  - '{"m_Value":333.20001220703127,"m_LowValue":0.0,"m_HighValue":1208.0}'
