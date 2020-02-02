@@ -23,7 +23,7 @@ public class NewPlayerz : MonoBehaviour
     Animator myAnimator;
 
     //MENU INTERACT
-    public bool menuInteract;
+    public bool menuInteract = false;
     Victim victim;
     private int menuLoc = 0;
 
@@ -38,7 +38,7 @@ public class NewPlayerz : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
 
-        resetBoxTime = 2;
+        resetBoxTime = 30;
         boxTime = resetBoxTime;
         sizeSave = this.transform.localScale;
     }
@@ -54,6 +54,7 @@ public class NewPlayerz : MonoBehaviour
             {
                 CloseMenu();
                 victim = null;
+                menuInteract = false;
             }
             if (Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical") > 0)
             {
@@ -133,18 +134,19 @@ public class NewPlayerz : MonoBehaviour
         else
         {
             Run();
-            if (Input.GetButtonDown("Interact"))
-            {
-                GetComponent<BoxCollider2D>().enabled = true;
-            }
+
+        }
+        if (Input.GetButtonDown("Interact") && menuInteract == false)
+        {
+            GetComponent<BoxCollider2D>().enabled = true;
         }
 
-        if (GetComponent<BoxCollider2D>().isActiveAndEnabled && boxTime == 0)
+        if (GetComponent<BoxCollider2D>().enabled == true && boxTime <= 0)
         {
             GetComponent<BoxCollider2D>().enabled = false;
             boxTime = resetBoxTime;
         }
-        else
+        else if(GetComponent<BoxCollider2D>().enabled == true)
         {
             boxTime -= 1;
         }
@@ -213,8 +215,14 @@ public class NewPlayerz : MonoBehaviour
         }
 
         //TODO: Perfrom grab limb animation
-        victim.RemoveLimb(type);
+
+        menuInteract = false;
+        CloseMenu();
+        
+        bagFull = true;
         content = type;
+        victim.RemoveLimb(type);
+        victim = null;
     }
 
     void GiveLimb()
@@ -224,14 +232,18 @@ public class NewPlayerz : MonoBehaviour
             //NO Limb
             return;
         }
-        else if (victim.HasLimb(content))
+        else if (victim.HasLimb(content) == true)
         {
             //TODO: Victim already has that limb
             return;
         }
 
         //TODO: Perfrom give limb animation
+        bagFull = false;
+        menuInteract = false;
+        CloseMenu();
         victim.GiveLimb(content);
+        victim = null;
     }
 
 

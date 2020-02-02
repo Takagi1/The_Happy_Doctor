@@ -26,7 +26,7 @@ public class Limb : MonoBehaviour
     public Sprite lost;
     public Sprite fix;
 
-    bool hasChanged = false;
+    public bool hasChanged = false;
 
     public InjuryClass state;
     public LimbType type;

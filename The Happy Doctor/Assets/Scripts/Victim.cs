@@ -12,6 +12,7 @@ public enum VicState {
 public class Victim : MonoBehaviour
 {
     private float healthMax;
+    
 
     [SerializeField]
     private float health;
@@ -45,6 +46,9 @@ public class Victim : MonoBehaviour
     public Text rightArmTxt;
     public Text rightLegTxt;
 
+    [SerializeField] float lostDamage = 0.3f;
+    [SerializeField] float injuredDamage = 0.1f;
+
     private void Awake()
     {
         //Set health to max
@@ -73,6 +77,7 @@ public class Victim : MonoBehaviour
 
     void Update()
     {
+      
         //TEMP
         leftArmTxt.text = "Left Arm " + leftArm.GetClass();
         if(leftArm.state == Limb.InjuryClass.FINE) { leftArmTxt.color = Color.green; }
@@ -95,17 +100,17 @@ public class Victim : MonoBehaviour
         else if (rightLeg.state == Limb.InjuryClass.LOST) { rightLegTxt.color = Color.red; }
 
 
-        if (leftArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
-        else if (leftArm.state == Limb.InjuryClass.LOST) { health -= 3; }
+        if (leftArm.state == Limb.InjuryClass.INJURED) { health -= injuredDamage; }
+        else if (leftArm.state == Limb.InjuryClass.LOST) { health -= lostDamage; }
 
-        if (leftLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
-        else if (leftLeg.state == Limb.InjuryClass.LOST) { health -= 3; }
+        if (leftLeg.state == Limb.InjuryClass.INJURED) { health -= injuredDamage; }
+        else if (leftLeg.state == Limb.InjuryClass.LOST) { health -= lostDamage; }
 
-        if (rightArm.state == Limb.InjuryClass.INJURED) { health -= 1; }
-        else if (rightArm.state == Limb.InjuryClass.LOST) { health -= 3; }
+        if (rightArm.state == Limb.InjuryClass.INJURED) { health -= injuredDamage; }
+        else if (rightArm.state == Limb.InjuryClass.LOST) { health -= lostDamage; }
 
-        if (rightLeg.state == Limb.InjuryClass.INJURED) { health -= 1; }
-        else if (rightLeg.state == Limb.InjuryClass.LOST) { health -= 3; }
+        if (rightLeg.state == Limb.InjuryClass.INJURED) { health -= injuredDamage; }
+        else if (rightLeg.state == Limb.InjuryClass.LOST) { health -= lostDamage; }
 
         healthBar.fillAmount = health / healthMax;
 
@@ -154,19 +159,24 @@ public class Victim : MonoBehaviour
         if (type == Limb.LimbType.LEFTARM)
         {
             leftArm.state = Limb.InjuryClass.FINE;
+            leftArm.hasChanged = true;
         }
         else if (type == Limb.LimbType.LEFTLEG)
         {
             leftLeg.state = Limb.InjuryClass.FINE;
+            leftLeg.hasChanged = true;
         }
         else if (type == Limb.LimbType.RIGHTARM)
         {
             rightArm.state = Limb.InjuryClass.FINE;
+            rightArm.hasChanged = true;
         }
         else if (type == Limb.LimbType.RIGHTLEG)
         {
             rightLeg.state = Limb.InjuryClass.FINE;
+            rightLeg.hasChanged = true;
         }
+
 
         //If all limbs removed kill victim
         if (leftArm.state == Limb.InjuryClass.FINE &&
@@ -181,31 +191,33 @@ public class Victim : MonoBehaviour
     {
         if(type == Limb.LimbType.LEFTARM)
         {
-            if(leftArm.state != Limb.InjuryClass.LOST)
+            if(leftArm.state == Limb.InjuryClass.LOST)
             {
-                return true;
+                return false;
             }
+            else { return true; }
         }
         else if (type == Limb.LimbType.LEFTLEG)
         {
-            if (leftLeg.state != Limb.InjuryClass.LOST)
+            if (leftLeg.state == Limb.InjuryClass.LOST)
             {
-                return true;
+                return false;
             }
+            else { return true; }
         }
         else if (type == Limb.LimbType.RIGHTARM)
         {
-            if (rightArm.state != Limb.InjuryClass.LOST)
+            if (rightArm.state == Limb.InjuryClass.LOST)
             {
-                return true;
-            }
+                return false;
+            } else { return true; }
         }
         else if (type == Limb.LimbType.RIGHTLEG)
         {
-            if (rightLeg.state != Limb.InjuryClass.LOST)
+            if (rightLeg.state == Limb.InjuryClass.LOST)
             {
-                return true;
-            }
+                return false;
+            } else { return true; }
         }
         return true;
     }
