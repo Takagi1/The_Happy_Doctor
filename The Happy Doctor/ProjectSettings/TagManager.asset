@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Victim
+  - Living
+  - Dead
+  - Saved
+  - UI
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Climbing
+  - Player
+  - Background
+  - Victim
+  - particle
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 436492271
+    locked: 0
+  - name: Victim
+    uniqueID: 721804777
+    locked: 0
+  - name: Player
+    uniqueID: 121351439
+    locked: 0
+  - name: ForeGround
+    uniqueID: 2355335069
+    locked: 0
